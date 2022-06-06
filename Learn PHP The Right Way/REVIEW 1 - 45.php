@@ -27,23 +27,21 @@ $y = &$x; //reference by value
 FILENAME:4.php
 <?php
 //constants: some static dates
-pa
 
-
-define ('NAME' , value);
+define ('NAME' , "Reza");
 
 echo NAME;
 
-echo defined('NAME') //BOLEAN (1 OR 0)
+echo defined('NAME'); //BOLEAN (1 OR 0)
 
 if(true){
-	const FOO = 'bar';
-	define('NAME', 'Reza'); 
+	// const FOO = "bar";
+		// define('NAME' , 'Reza'); 
 }
 
 $paid = 'PAID';
 
-define('STATUS_' .$paid, 4); 
+define("STATUS_".$paid, 4); 
 echo STATUS_PAID;
 
 //PRINT PHP version
@@ -54,7 +52,7 @@ echo PHP_VERSION;
 echo __LINE__;
 echo __FILE__;
 
-//variable varianle
+//variable variable
 
 $foo = 'bar';
 
@@ -64,38 +62,47 @@ echo $foo, $bar; // or echo "$foo, ${$foo}";
 
 ?>
 FILENAME:5.php
-$comlete = true; // return 1
-$comlete = false; // return nothing!
-
-var_dump($comlete); // return datatpe with value
-
-print_r //print array
-
-/* 
-types: scalar(int,...) , compound(array,object,callable, iterable);  special
-*/
-** function f(int $x){ //gaurantee that its integer
-... }
-
+<?php
 
 //enable strict_types !
 declare(strict_types=1);
 //مجبور میکنه که نوعش حتما درس باشه
 
+
+$comlete = true; // return 1
+$comlete = false; // return nothing!
+
+var_dump($comlete); // return datatpe with value
+
+
+#print_r(); //print array
+
+/* 
+types: scalar(int,...) , compound(array,object,callable, iterable);  special
+*/
+function f(int $x){ //gaurantee that its integer
+ }
+
+
+
 //type casting
 
 $x = (int) 5.5;
 
+?>
+
 FILENAME:6.php
-﻿// BASE 10
+﻿<?php
+
+// BASE 10
 $x = 10;
 
 //base hexdec
 
-$x = 0x ... ;
+# $x = 0x ... ;
 
 //base bin
-0b
+#0b
 
 $x = PHP_INT_MAX+1;
 //cast this to int
@@ -112,8 +119,10 @@ var_dump($x);
 // مشخص کردن نوع متغیر
 var_dump(is_int($x));
 
-$x = 2_000_000; // :) out: int:2000000 string: 2 
+$x = (int)2-000-000; // :) out: int:2000000 string: 2 
 // پی اج پی زیرخط رو در نظر نمیگیره!
+echo $x;
+?>
 FILENAME:7.php
 <?php
 
@@ -137,18 +146,16 @@ ceil((0.1+0.2)*10); // 4! : 3.00000000000004 = گردش میکنه
 //نباید مستقیم این اعداد رو با هم مقایسه کنید
 
 //NAN = تعریف نشده
-is_nan ?
+#is_nan ?
 // INF = بینهایت
-is_infinite ?
-is_finite ?
+#is_infinite ?
+#is_finite ?
  
 echo PHP_FLOAT_MAX *2;
 
 //cast to float
 var_dump ((float) 'flsdkjf'); // 0 مثل اینتیجر
-
-
-
+?>
 FILENAME:8.php
 <?php
 
@@ -161,7 +168,7 @@ $lname = "$fname Dehghani"; // CAN!
 
 $name = $fname . ' ' . $lname;
 
-echo name[5]; // -2 از آخر
+echo $name[5]; // -2 از آخر
 
 //HEREdoc
 $text = <<<TEXT
@@ -178,6 +185,8 @@ ECHO nl2br($text);
 //Nowdoc
 
 FILENAME:9.php
+<?php 
+
 $x = null;
 echo $x;
 // echo cast everything to string
@@ -186,9 +195,9 @@ echo $x;
 
 // or unset($x);
 
-var_dump(int) $x); // int,string, array = 0 ; bool == false 
+var_dump((int) $x); // int,string, array = 0 ; bool == false 
 
-
+?>
 FILENAME:11.php
 <?php
 
@@ -209,7 +218,7 @@ echo count($prog_langs);
 
 //funcs
 
-array_push($array, 'value');
+array_push($prog_langs, 'value');
 
 //value-key
 
@@ -229,15 +238,19 @@ $array = [1 => 'b', 50 => 'c', 'd'];
 
 //remove element
 
-echo array_shift(); // reindex elements;
+echo array_shift($array); // reindex elements;
+var_dump($array);
+
 
 unset($array[50], $array[1]); // every element as args and with no reindex
+var_dump($array);
 
 $array[] = 1; //push in empty array, enjoy export!!!
 
 array_key_exists('a', $array); // key be here?
 
-var_dump((isset($array['key']));// is null?
+var_dump
+(isset($array['key'])); // is null?
 
 
 
@@ -247,7 +260,7 @@ FILENAME:12.php
 //Expression : condition, loop, evaluate with variables, ... 
 $x = 5;
 
-$y = //exprssion $x;
+$y = $x;//exprssion $x;
 
 
 FILENAME:13.php
@@ -256,7 +269,8 @@ FILENAME:13.php
 /*operators */
 
 //Arithmatics (+ - * / % **)
-$x = -'10' // cast to int!
+$x = -'10'; // cast to int!
+var_dump($x);
 //تقسیم بر 10 = خطا!!!
 //% = cast to int
 // mod operation of floats var_dump(fmod($x, $y);
@@ -267,7 +281,8 @@ $x = -'10' // cast to int!
 // . = concat
 
 //Comparisons
-var_dump($x != $y) // or <>
+$y = 65;
+var_dump($x != $y); // or <>
 
 
 FILENAME:14.php
@@ -307,10 +322,11 @@ php.net-> language ops precedence
 // and or ops 
 // اولویت کمتری نسبت به && || دارند
 
-$x = ture;
+$x = true;
 $y = false;
 
 $z = ($x and $y);
+var_dump($z);
 
 // حتما از پرانتز برای خوانایی و عدم تعجب از نتایج ناخواسته ! استفاده کنید.
 ?>
@@ -336,7 +352,8 @@ FILENAME:17.php
 //مثل ج قبلی
 // } -> : 
 // } -> end while
-while (1)
+$i =16;
+while ($i<100)
 {
     while ($i >= 15)
     {
@@ -349,7 +366,7 @@ for($i = 0; print $i, $i < 15; $i++)
 {
     // execute one time : $i = 0; print $i
 
-    //echo $i;
+    // echo $i;
 }
 
 $pl = ['php', 'jva'];
@@ -358,26 +375,27 @@ foreach ($pl as $key => $l)
 {
     echo $key . $l;
 }
-//this not delete after fore -> issue on code
+//this not delete after for -> issue on code
 echo $l;
 //solved
 unset ($l);
 
 //echo array on a multi var
-implode(
+// implode(
     //or
 
-json_encode()
-)
+// json_encode()
+
 ?>
 FILENAME:18.php
 <?php
-
 $pay ='rejected';
 
 switch ($pay)
 {
     case 'rejected':
+        echo ":)";
+        break;
     case 'not paid':
         echo "sth";
         break;
@@ -388,7 +406,7 @@ FILENAME:19.php
 <?php
 
 //php 8
-
+$x =2;
 match ($x)
 {
     //key-value pares
@@ -399,13 +417,16 @@ match ($x)
 };
 FILENAME:20.php
 <?php
+
+declare (strict_types=1);
+
 /* return / declare . goto */
 
 // stop execution of script
 
-return;
+// return;
 
-// diclares: ticks, encodeing , strict_typres
+// diclares: ticks, encoding , strict_types
 
 function ontick()
 {
@@ -416,8 +437,6 @@ register_tick_function('ontick');
 declare (tick = 3);
 $i = 0;
 $len = 10;
-
-declare (strict_types=1);
 
 function sum(int $x , int $y)
 {
@@ -476,7 +495,6 @@ $arr = ['y' => '2' , 'x' => 1];
 echo foo(...$arr);
 
 FILENAME:24.php
-
 <!-- variable scopes -->
 <?php 
 
@@ -506,14 +524,14 @@ function foo()
     echo getvalue();
 }
 
-foo();
+foo(20);
 
 //1- foo($x) 2-global var 3- or echo $x in function
 
 FILENAME:25.php
 <?php
 
-// variables, anonymous, arrow funcrtions
+// variables, anonymous, arrow functions
 
 function sum(int|float .. $nums): int|float{
     return array_sum ($nums);
@@ -561,21 +579,23 @@ FILENAME:26.php
 $ct = time();
 
 echo $ct + 5 *24 * 60*60; //for 5 days
-
+echo "<br/>";
 echo $ct - 60 *60 * 24;
+echo "<br/>";
 
 echo date('m/d/Y g:ia');
 
 // /convert to time zip_open
 
-date_default_timezone_set('UTC');
+date_default_timezone_set('Asia/Tehran');
 echo date_default_timezone_get();
+echo date('m/d/Y g:ia');
 
 // set ALWAYS TO UTC
 
 echo mktime(0,0,0,4,10,null);
 
-// echo strtotime(second friday of january);
+// echo strtotime("second friday of january");
 
 // var_dump((date_parse_from_format()))
 
@@ -600,7 +620,7 @@ prettyPrintArray($even);
 
 $array2 = ['a' =>5 , 'b' =>6];
 
-// $keys = array_keys()
+// $keys = array_keys();
 
 $array = array_map(fn($number) => $number *3 , $array);
 
@@ -637,7 +657,7 @@ FILENAME:28.php
 // error_reporting, error_log, desplay_errors
 
 //current set 
-var_dump(ini_get('erroe_reporting'));
+var_dump(ini_get('error_reporting'));
 var_dump(E_ALL);
 
 // ini_set('display_error,0); // no error')
@@ -649,12 +669,12 @@ FILENAME:29.php
 
 //Error handling
 //E_all show all error
-error_reporting(E_ALL & E_WARNING
+error_reporting(E_ALL & E_WARNING);
 
 trigger_error('ex error, E_user_eror)');
 
-function errorHandler(int $size)
-error_log()
+function errorHandler(int $size){}
+error_log("You messed up!");
 FILENAME:30.php
 <?php
 
@@ -672,29 +692,33 @@ FILENAME:30.php
 FILENAME:31.php
 <?php
 
-// working with fileststem
+// working with filesystem
 
 $dir = scandir((__DIR__));
 
-echo vardump($dir);
-vardump (is_dir($dir));
+echo var_dump($dir);
+var_dump (is_dir($dir));
 
-mkdir('foo/var', recursive: true);
+mkdir('temp/var.php');
+    // mkdir('foo/var', recursive: true);
 
-if (file_exists('foo.txt'))
+
+if (file_exists('30.php'))
     echo "bla bla";
 
-// filesize()
-// file_put_contents() //first clear cash
+echo filesize("30.php");
 
-// clearstatcache();
+// clearstatcache("31.php");
+// file_put_contents("31.php","some thing append to this file") //first clear cash
 
-$file = fopen('foo.txt', 'r');
+
+
+// $file = fopen('foo.txt', 'r');
 //open= resourse
 
 // @fopen : کنترل خطا
 
-$file = @fopen('foo.txt', 'r');
+$file = @fopen('30.php', 'r');
 
 var_dump($file);
 
@@ -706,10 +730,11 @@ var_dump($file);
 
 // fgetcsv() 
 
-$content= file_get_contents('foo.txt', offset="3", filrAppend);
+$content= file_get_contents('5.php', FILE_APPEND);
+// $content= file_get_contents('foo.txt', offset="3", fileAppend);
 
 echo $content;
 
 // copy() copy file
 // rename () for move
-
+copy("31.php", "31_copy.php");
