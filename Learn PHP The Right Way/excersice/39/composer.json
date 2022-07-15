@@ -1,0 +1,16 @@
+{
+    "name": "computer/39",
+    "autoload": {
+        "psr-4": {
+            "Acme\\":"src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "reza-dehghani",
+            "email": "iamreza@outlook.com"
+        }
+    ],
+    "require": {}
+
+}
