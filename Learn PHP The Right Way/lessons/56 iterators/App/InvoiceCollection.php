@@ -42,7 +42,8 @@ use Traversable;
 
 # or
 
-/*class InvoiceCollection implements \Iterator
+/*
+class InvoiceCollection implements \Iterator
 {
     private int $key; //pointer property
     public function __construct(public array $invoices)
@@ -76,7 +77,6 @@ use Traversable;
     public function rewind() : void
     {
         echo __METHOD__ . PHP_EOL;
-
         $this->key = 0;       
     }
 }*/
