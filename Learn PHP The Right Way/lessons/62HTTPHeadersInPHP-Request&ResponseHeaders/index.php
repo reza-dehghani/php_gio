@@ -17,11 +17,13 @@ $router
 ->register('/invoices',[App\Controllers\InvoiceController::class, 'index'])
 ->register('/invoices/create',[App\Controllers\InvoiceController::class, 'create'])
 ->register('/upload',[App\Controllers\HomeController::class, 'upload'])
+->register('/download',[App\Controllers\HomeController::class, 'download'])
 ->register('/invoices/store',[App\Controllers\InvoiceController::class, 'store']);
 
 echo $router->resolve($_SERVER['REQUEST_URI']);
+
 }   catch(\App\Exception\ViewNotFoundException $e){
-    // header('HTTP/1.1 404nOTfOUND'); Because before any output annoyed
+    // header('HTTP/1.1 404nOTfOUND'); //Because before any output annoyed
     http_response_code(404);
 
     echo View::make('error/404');

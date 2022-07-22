@@ -39,7 +39,7 @@ class View
         ob_start();
 
         foreach([$headerPath,$viewPath,$footerPath] as $f) include_once($f);
-        return include $pages;
+        // return include $pages;
         }
         else
         return include $viewPath;

@@ -19,7 +19,7 @@ class invoiceController
     }
     public function store()
     {
-        $amount= $_POST['amount'];
+        $amount= $_GET['amount'];
         $invoice = new invoiceController($amount);
 
         $invoice->store($amount);

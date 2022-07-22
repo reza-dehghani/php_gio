@@ -14,4 +14,11 @@ class HomeController
     {
         return View::make('upload');
     }
+    public function download()
+    {
+        header('Content-Type: applicaion/pdf');
+        header('Content-Disposition: attachment;filename="reza.png"');
+
+        readfile(STORAGE . '/pdf.pdf');
+    }
 }

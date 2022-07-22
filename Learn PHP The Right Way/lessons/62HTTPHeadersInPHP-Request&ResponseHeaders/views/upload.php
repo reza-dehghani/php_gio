@@ -10,3 +10,4 @@
         move_uploaded_file($_FILES['antern']['tmp_name'], $path);
 
         header('Location: /');
+        // exit();
