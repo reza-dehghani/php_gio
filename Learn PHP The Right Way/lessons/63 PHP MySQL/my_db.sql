@@ -19,3 +19,10 @@ INSERT INTO users (email, full_name, is_active, created_at)
 		on delete set null
 		on update cascade
 		);
+		
+insert into invoices (amount, user_id) values (25,1), (115.95, 1), (10500, 1);
+
+SELECT invoices.id, amount, full_name
+FROM invoices
+INNER JoIN users ON users.id = user_id
+WHERE amount;
